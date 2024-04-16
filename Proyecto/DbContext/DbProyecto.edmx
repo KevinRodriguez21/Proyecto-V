@@ -1,0 +1,298 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ProyectoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="SPClienteAgregar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nombre" Type="varchar" Mode="In" />
+          <Parameter Name="apellido" Type="varchar" Mode="In" />
+          <Parameter Name="cedula" Type="varchar" Mode="In" />
+          <Parameter Name="telefono" Type="varchar" Mode="In" />
+          <Parameter Name="correoelectronico" Type="varchar" Mode="In" />
+          <Parameter Name="tipoclienteid" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SPClienteConsultarPorID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idCliente" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SPClienteEliminar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idCliente" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SPClienteModificar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="clienteid" Type="int" Mode="In" />
+          <Parameter Name="nombre" Type="varchar" Mode="In" />
+          <Parameter Name="apellido" Type="varchar" Mode="In" />
+          <Parameter Name="cedula" Type="varchar" Mode="In" />
+          <Parameter Name="telefono" Type="varchar" Mode="In" />
+          <Parameter Name="correoelectronico" Type="varchar" Mode="In" />
+          <Parameter Name="tipoclienteid" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SPClientesListar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SPClienteTipo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SPEmpleadoAgregar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nombre" Type="varchar" Mode="In" />
+          <Parameter Name="apellido" Type="varchar" Mode="In" />
+          <Parameter Name="cedula" Type="varchar" Mode="In" />
+          <Parameter Name="telefono" Type="varchar" Mode="In" />
+          <Parameter Name="correo" Type="varchar" Mode="In" />
+          <Parameter Name="departamentoid" Type="int" Mode="In" />
+          <Parameter Name="jerarquiaid" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SPEmpleadoConsultarPorID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idEmpleado" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SPEmpleadoDepartamento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SPEmpleadoEliminar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idEmpleado" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SPEmpleadoJerarquia" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SPEmpleadoModificar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Empleadoid" Type="int" Mode="In" />
+          <Parameter Name="nombre" Type="varchar" Mode="In" />
+          <Parameter Name="apellido" Type="varchar" Mode="In" />
+          <Parameter Name="cedula" Type="varchar" Mode="In" />
+          <Parameter Name="telefono" Type="varchar" Mode="In" />
+          <Parameter Name="correo" Type="varchar" Mode="In" />
+          <Parameter Name="departamentoid" Type="int" Mode="In" />
+          <Parameter Name="jerarquiaid" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SPEmpleadosListar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SPUsuarioAgregar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="usuario" Type="varchar" Mode="In" />
+          <Parameter Name="contrasennia" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="ProyectoModelStoreContainer" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ProyectoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ProyectoEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="SPClientesListar" ReturnType="Collection(ProyectoModel.SPClientesListar_Result)" />
+          <FunctionImport Name="SPClienteAgregar">
+            <Parameter Name="nombre" Mode="In" Type="String" />
+            <Parameter Name="apellido" Mode="In" Type="String" />
+            <Parameter Name="cedula" Mode="In" Type="String" />
+            <Parameter Name="telefono" Mode="In" Type="String" />
+            <Parameter Name="correoelectronico" Mode="In" Type="String" />
+            <Parameter Name="tipoclienteid" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SPClienteTipo" ReturnType="Collection(ProyectoModel.SPClienteTipo_Result)" />
+          <FunctionImport Name="SPEmpleadosListar" ReturnType="Collection(ProyectoModel.SPEmpleadosListar_Result)" />
+          <FunctionImport Name="SPClienteEliminar">
+          <Parameter Name="idCliente" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SPClienteModificar">
+            <Parameter Name="clienteid" Mode="In" Type="Int32" />
+            <Parameter Name="nombre" Mode="In" Type="String" />
+            <Parameter Name="apellido" Mode="In" Type="String" />
+            <Parameter Name="cedula" Mode="In" Type="String" />
+            <Parameter Name="telefono" Mode="In" Type="String" />
+            <Parameter Name="correoelectronico" Mode="In" Type="String" />
+            <Parameter Name="tipoclienteid" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SPClienteConsultarPorID" ReturnType="Collection(ProyectoModel.SPClienteConsultarPorID_Result)">
+          <Parameter Name="idCliente" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SPEmpleadoAgregar">
+            <Parameter Name="nombre" Mode="In" Type="String" />
+            <Parameter Name="apellido" Mode="In" Type="String" />
+            <Parameter Name="cedula" Mode="In" Type="String" />
+            <Parameter Name="telefono" Mode="In" Type="String" />
+            <Parameter Name="correo" Mode="In" Type="String" />
+            <Parameter Name="departamentoid" Mode="In" Type="Int32" />
+            <Parameter Name="jerarquiaid" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SPEmpleadoConsultarPorID" ReturnType="Collection(ProyectoModel.SPEmpleadoConsultarPorID_Result)">
+          <Parameter Name="idEmpleado" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SPEmpleadoDepartamento" ReturnType="Collection(ProyectoModel.SPEmpleadoDepartamento_Result)" />
+          <FunctionImport Name="SPEmpleadoEliminar">
+          <Parameter Name="idEmpleado" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SPEmpleadoJerarquia" ReturnType="Collection(ProyectoModel.SPEmpleadoJerarquia_Result)" />
+          <FunctionImport Name="SPEmpleadoModificar">
+            <Parameter Name="Empleadoid" Mode="In" Type="Int32" />
+            <Parameter Name="nombre" Mode="In" Type="String" />
+            <Parameter Name="apellido" Mode="In" Type="String" />
+            <Parameter Name="cedula" Mode="In" Type="String" />
+            <Parameter Name="telefono" Mode="In" Type="String" />
+            <Parameter Name="correo" Mode="In" Type="String" />
+            <Parameter Name="departamentoid" Mode="In" Type="Int32" />
+            <Parameter Name="jerarquiaid" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SPUsuarioAgregar">
+            <Parameter Name="usuario" Mode="In" Type="String" />
+            <Parameter Name="contrasennia" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="SPClientesListar_Result">
+          <Property Type="Int32" Name="ClienteID" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Apellido" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="CorreoElectronico" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Telefono" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Cedula" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="DescripcionTipo" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="SpUsuariosListar_Result">
+          <Property Type="Int32" Name="UsuarioID" Nullable="false" />
+          <Property Type="String" Name="Usuario" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Contrasennia" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SPClienteTipo_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="descrip" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="SPEmpleadosListar_Result">
+          <Property Type="String" Name="DescripcionDepart" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="DescripcionJerarq" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="EmpleadoID" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Cedula" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Apellido" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Telefono" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="CorreoElectronico" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="SPClienteConsultarPorID_Result">
+          <Property Type="Int32" Name="ClienteID" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Apellido" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Cedula" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Telefono" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="CorreoElectronico" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="TipoClienteID" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SPEmpleadoConsultarPorID_Result">
+          <Property Type="Int32" Name="EmpleadoID" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Apellido" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Cedula" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Telefono" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="CorreoElectronico" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="DepartamentoID" Nullable="true" />
+          <Property Type="Int32" Name="JerarquiaID" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="SPEmpleadoDepartamento_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="descrip" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="SPEmpleadoJerarquia_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="descrip" Nullable="true" MaxLength="100" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ProyectoModelStoreContainer" CdmEntityContainer="ProyectoEntities" >
+          <FunctionImportMapping FunctionImportName="SPClientesListar" FunctionName="ProyectoModel.Store.SPClientesListar">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ProyectoModel.SPClientesListar_Result">
+                <ScalarProperty Name="ClienteID" ColumnName="ClienteID" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="CorreoElectronico" ColumnName="CorreoElectronico" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="DescripcionTipo" ColumnName="DescripcionTipo" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SPClienteAgregar" FunctionName="ProyectoModel.Store.SPClienteAgregar" />
+          <FunctionImportMapping FunctionImportName="SPClienteTipo" FunctionName="ProyectoModel.Store.SPClienteTipo">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ProyectoModel.SPClienteTipo_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="descrip" ColumnName="descrip" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SPEmpleadosListar" FunctionName="ProyectoModel.Store.SPEmpleadosListar">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ProyectoModel.SPEmpleadosListar_Result">
+                <ScalarProperty Name="DescripcionDepart" ColumnName="DescripcionDepart" />
+                <ScalarProperty Name="DescripcionJerarq" ColumnName="DescripcionJerarq" />
+                <ScalarProperty Name="EmpleadoID" ColumnName="EmpleadoID" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="CorreoElectronico" ColumnName="CorreoElectronico" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SPClienteEliminar" FunctionName="ProyectoModel.Store.SPClienteEliminar" />
+          <FunctionImportMapping FunctionImportName="SPClienteModificar" FunctionName="ProyectoModel.Store.SPClienteModificar" />
+          <FunctionImportMapping FunctionImportName="SPClienteConsultarPorID" FunctionName="ProyectoModel.Store.SPClienteConsultarPorID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ProyectoModel.SPClienteConsultarPorID_Result">
+                <ScalarProperty Name="ClienteID" ColumnName="ClienteID" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="CorreoElectronico" ColumnName="CorreoElectronico" />
+                <ScalarProperty Name="TipoClienteID" ColumnName="TipoClienteID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SPEmpleadoAgregar" FunctionName="ProyectoModel.Store.SPEmpleadoAgregar" />
+          <FunctionImportMapping FunctionImportName="SPEmpleadoConsultarPorID" FunctionName="ProyectoModel.Store.SPEmpleadoConsultarPorID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ProyectoModel.SPEmpleadoConsultarPorID_Result">
+                <ScalarProperty Name="EmpleadoID" ColumnName="EmpleadoID" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="CorreoElectronico" ColumnName="CorreoElectronico" />
+                <ScalarProperty Name="DepartamentoID" ColumnName="DepartamentoID" />
+                <ScalarProperty Name="JerarquiaID" ColumnName="JerarquiaID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SPEmpleadoDepartamento" FunctionName="ProyectoModel.Store.SPEmpleadoDepartamento">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ProyectoModel.SPEmpleadoDepartamento_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="descrip" ColumnName="descrip" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SPEmpleadoEliminar" FunctionName="ProyectoModel.Store.SPEmpleadoEliminar" />
+          <FunctionImportMapping FunctionImportName="SPEmpleadoJerarquia" FunctionName="ProyectoModel.Store.SPEmpleadoJerarquia">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ProyectoModel.SPEmpleadoJerarquia_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="descrip" ColumnName="descrip" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SPEmpleadoModificar" FunctionName="ProyectoModel.Store.SPEmpleadoModificar" />
+          <FunctionImportMapping FunctionImportName="SPUsuarioAgregar" FunctionName="ProyectoModel.Store.SPUsuarioAgregar" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
