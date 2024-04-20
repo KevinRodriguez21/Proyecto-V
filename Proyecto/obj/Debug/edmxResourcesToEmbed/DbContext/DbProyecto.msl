@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ProyectoModelStoreContainer" CdmEntityContainer="ProyectoEntities">
+    <FunctionImportMapping FunctionImportName="SPClientesListar" FunctionName="ProyectoModel.Store.SPClientesListar">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ProyectoModel.SPClientesListar_Result">
+          <ScalarProperty Name="ClienteID" ColumnName="ClienteID" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="CorreoElectronico" ColumnName="CorreoElectronico" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="DescripcionTipo" ColumnName="DescripcionTipo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SPClienteAgregar" FunctionName="ProyectoModel.Store.SPClienteAgregar" />
+    <FunctionImportMapping FunctionImportName="SPClienteTipo" FunctionName="ProyectoModel.Store.SPClienteTipo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ProyectoModel.SPClienteTipo_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="descrip" ColumnName="descrip" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SPEmpleadosListar" FunctionName="ProyectoModel.Store.SPEmpleadosListar">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ProyectoModel.SPEmpleadosListar_Result">
+          <ScalarProperty Name="DescripcionDepart" ColumnName="DescripcionDepart" />
+          <ScalarProperty Name="DescripcionJerarq" ColumnName="DescripcionJerarq" />
+          <ScalarProperty Name="EmpleadoID" ColumnName="EmpleadoID" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="CorreoElectronico" ColumnName="CorreoElectronico" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SPClienteEliminar" FunctionName="ProyectoModel.Store.SPClienteEliminar" />
+    <FunctionImportMapping FunctionImportName="SPClienteModificar" FunctionName="ProyectoModel.Store.SPClienteModificar" />
+    <FunctionImportMapping FunctionImportName="SPClienteConsultarPorID" FunctionName="ProyectoModel.Store.SPClienteConsultarPorID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ProyectoModel.SPClienteConsultarPorID_Result">
+          <ScalarProperty Name="ClienteID" ColumnName="ClienteID" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="CorreoElectronico" ColumnName="CorreoElectronico" />
+          <ScalarProperty Name="TipoClienteID" ColumnName="TipoClienteID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SPEmpleadoAgregar" FunctionName="ProyectoModel.Store.SPEmpleadoAgregar" />
+    <FunctionImportMapping FunctionImportName="SPEmpleadoConsultarPorID" FunctionName="ProyectoModel.Store.SPEmpleadoConsultarPorID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ProyectoModel.SPEmpleadoConsultarPorID_Result">
+          <ScalarProperty Name="EmpleadoID" ColumnName="EmpleadoID" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="CorreoElectronico" ColumnName="CorreoElectronico" />
+          <ScalarProperty Name="DepartamentoID" ColumnName="DepartamentoID" />
+          <ScalarProperty Name="JerarquiaID" ColumnName="JerarquiaID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SPEmpleadoDepartamento" FunctionName="ProyectoModel.Store.SPEmpleadoDepartamento">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ProyectoModel.SPEmpleadoDepartamento_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="descrip" ColumnName="descrip" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SPEmpleadoEliminar" FunctionName="ProyectoModel.Store.SPEmpleadoEliminar" />
+    <FunctionImportMapping FunctionImportName="SPEmpleadoJerarquia" FunctionName="ProyectoModel.Store.SPEmpleadoJerarquia">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ProyectoModel.SPEmpleadoJerarquia_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="descrip" ColumnName="descrip" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SPEmpleadoModificar" FunctionName="ProyectoModel.Store.SPEmpleadoModificar" />
+    <FunctionImportMapping FunctionImportName="SPUsuarioValidar" FunctionName="ProyectoModel.Store.SPUsuarioValidar" />
+  </EntityContainerMapping>
+</Mapping>

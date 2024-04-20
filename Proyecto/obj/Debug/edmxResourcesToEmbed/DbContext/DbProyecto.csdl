@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProyectoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ProyectoEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="SPClientesListar" ReturnType="Collection(ProyectoModel.SPClientesListar_Result)" />
+    <FunctionImport Name="SPClienteAgregar">
+      <Parameter Name="nombre" Mode="In" Type="String" />
+      <Parameter Name="apellido" Mode="In" Type="String" />
+      <Parameter Name="cedula" Mode="In" Type="String" />
+      <Parameter Name="telefono" Mode="In" Type="String" />
+      <Parameter Name="correoelectronico" Mode="In" Type="String" />
+      <Parameter Name="tipoclienteid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SPClienteTipo" ReturnType="Collection(ProyectoModel.SPClienteTipo_Result)" />
+    <FunctionImport Name="SPEmpleadosListar" ReturnType="Collection(ProyectoModel.SPEmpleadosListar_Result)" />
+    <FunctionImport Name="SPClienteEliminar">
+      <Parameter Name="idCliente" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SPClienteModificar">
+      <Parameter Name="clienteid" Mode="In" Type="Int32" />
+      <Parameter Name="nombre" Mode="In" Type="String" />
+      <Parameter Name="apellido" Mode="In" Type="String" />
+      <Parameter Name="cedula" Mode="In" Type="String" />
+      <Parameter Name="telefono" Mode="In" Type="String" />
+      <Parameter Name="correoelectronico" Mode="In" Type="String" />
+      <Parameter Name="tipoclienteid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SPClienteConsultarPorID" ReturnType="Collection(ProyectoModel.SPClienteConsultarPorID_Result)">
+      <Parameter Name="idCliente" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SPEmpleadoAgregar">
+      <Parameter Name="nombre" Mode="In" Type="String" />
+      <Parameter Name="apellido" Mode="In" Type="String" />
+      <Parameter Name="cedula" Mode="In" Type="String" />
+      <Parameter Name="telefono" Mode="In" Type="String" />
+      <Parameter Name="correo" Mode="In" Type="String" />
+      <Parameter Name="departamentoid" Mode="In" Type="Int32" />
+      <Parameter Name="jerarquiaid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SPEmpleadoConsultarPorID" ReturnType="Collection(ProyectoModel.SPEmpleadoConsultarPorID_Result)">
+      <Parameter Name="idEmpleado" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SPEmpleadoDepartamento" ReturnType="Collection(ProyectoModel.SPEmpleadoDepartamento_Result)" />
+    <FunctionImport Name="SPEmpleadoEliminar">
+      <Parameter Name="idEmpleado" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SPEmpleadoJerarquia" ReturnType="Collection(ProyectoModel.SPEmpleadoJerarquia_Result)" />
+    <FunctionImport Name="SPEmpleadoModificar">
+      <Parameter Name="Empleadoid" Mode="In" Type="Int32" />
+      <Parameter Name="nombre" Mode="In" Type="String" />
+      <Parameter Name="apellido" Mode="In" Type="String" />
+      <Parameter Name="cedula" Mode="In" Type="String" />
+      <Parameter Name="telefono" Mode="In" Type="String" />
+      <Parameter Name="correo" Mode="In" Type="String" />
+      <Parameter Name="departamentoid" Mode="In" Type="Int32" />
+      <Parameter Name="jerarquiaid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SPUsuarioAgregar">
+      <Parameter Name="usuario" Mode="In" Type="String" />
+      <Parameter Name="contrasennia" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPUsuarioValidar" ReturnType="Collection(Int32)">
+      <Parameter Name="usuario" Mode="In" Type="String" />
+      <Parameter Name="contrasennia" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="SPClientesListar_Result">
+    <Property Type="Int32" Name="ClienteID" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Apellido" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CorreoElectronico" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Telefono" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Cedula" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="DescripcionTipo" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="SpUsuariosListar_Result">
+    <Property Type="Int32" Name="UsuarioID" Nullable="false" />
+    <Property Type="String" Name="Usuario" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Contrasennia" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SPClienteTipo_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="descrip" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="SPEmpleadosListar_Result">
+    <Property Type="String" Name="DescripcionDepart" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="DescripcionJerarq" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="EmpleadoID" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Cedula" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Apellido" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Telefono" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="CorreoElectronico" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="SPClienteConsultarPorID_Result">
+    <Property Type="Int32" Name="ClienteID" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Apellido" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Cedula" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Telefono" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="CorreoElectronico" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="TipoClienteID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SPEmpleadoConsultarPorID_Result">
+    <Property Type="Int32" Name="EmpleadoID" Nullable="false" />
+    <Property Type="String" Name="Nombre" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Apellido" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Cedula" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Telefono" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="CorreoElectronico" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="DepartamentoID" Nullable="true" />
+    <Property Type="Int32" Name="JerarquiaID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SPEmpleadoDepartamento_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="descrip" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="SPEmpleadoJerarquia_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="descrip" Nullable="true" MaxLength="100" />
+  </ComplexType>
+</Schema>
