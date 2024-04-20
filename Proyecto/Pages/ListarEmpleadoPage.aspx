@@ -28,4 +28,7 @@
             </Columns>
         </asp:GridView>
     </div>
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="Opciones.aspx" class="btn btn-primary">Regresar</a>
+    </div>
 </asp:Content>

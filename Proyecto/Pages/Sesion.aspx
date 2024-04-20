@@ -1,31 +1,24 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Sesion.aspx.cs" Inherits="Proyecto.Pages.Sesion" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <h2>Inicio</h2>
-
-    <div class="primary-container">
-        <asp:GridView ID="GvListaUsuarios" runat="server" AutoGenerateColumns="false" CssClass="table table-striped">
-            <Columns>
-
-                <asp:BoundField DataField="UsuarioID" HeaderText="Codigo Usuario" />
-                <asp:BoundField DataField="Usuario" HeaderText="Nombre Usuario" />
-                <asp:BoundField DataField="Contrasennia" HeaderText="Telefono" />
-
-            </Columns>
-        </asp:GridView>
-        <%--<div>
-            <span>Usuario</span>
-            <asp:TextBox ID="txtUsuario" runat="server" CssClass="form-control"></asp:TextBox>
-        </div>
+    <h2 style="text-align: center; margin-top: 20px;">Iniciar Sesión</h2>
+    <div style="text-align: center; margin-top: 20px;">
         <div>
-            <span>Contraseña</span>
-            <asp:TextBox ID="txtContrasennia" runat="server" CssClass="form-control"></asp:TextBox>
+            <asp:Image ID="imgLogo" runat="server" ImageUrl="~/Imagen/Login.png" CssClass="center-block" Width="200px" Height="200px" />
         </div>
-        <div>
+        <div style="display: inline-block; vertical-align: middle; text-align: left;">
+            <span>Usuario:</span>
+            <asp:TextBox ID="txtUsuario" runat="server" CssClass="form-control" Style="margin-top: 20px;"></asp:TextBox>
+        </div>
+        <div style="display: inline-block; vertical-align: middle; text-align: left;">
+            <span>Contraseña:</span>
+            <asp:TextBox ID="txtContrasennia" runat="server" CssClass="form-control" Style="margin-top: 20px;"></asp:TextBox>
+        </div>
+        <div style="text-align: center; margin-top: 20px;">
             <asp:Label ID="lblMensaje" runat="server" Text=""></asp:Label>
         </div>
-        <div>
+        <div style="text-align: center; margin-top: 20px;">
             <asp:Button ID="btnIngresar" runat="server" Text="Ingresar" CssClass="btn btn-primary" OnClick="btnIngresar_Click" />
-        </div>--%>
+        </div>
     </div>
 </asp:Content>

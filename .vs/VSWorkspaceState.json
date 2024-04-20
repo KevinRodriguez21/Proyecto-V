@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Proyecto",
+    "\\Proyecto\\Pages"
   ],
-  "SelectedNode": "\\Proyecto.sln",
+  "SelectedNode": "\\Proyecto\\Pages\\Sesion.aspx",
   "PreviewInSolutionExplorer": false
 }

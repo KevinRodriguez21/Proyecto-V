@@ -15,7 +15,7 @@
                 <asp:BoundField DataField="Apellido" HeaderText="Apellido" />
                 <asp:BoundField DataField="CorreoElectronico" HeaderText="Correo Electronico" />
                 <asp:BoundField DataField="Telefono" HeaderText="Telefono" />
-                <asp:BoundField DataField="Cedula" HeaderText="Cedula" /> 
+                <asp:BoundField DataField="Cedula" HeaderText="Cedula" />
                 <asp:BoundField DataField="DescripcionTipo" HeaderText="Tipo Cliente" />
 
                 <asp:TemplateField>
@@ -26,5 +26,8 @@
 
             </Columns>
         </asp:GridView>
+    </div>
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="Opciones.aspx" class="btn btn-primary">Regresar</a>
     </div>
 </asp:Content>

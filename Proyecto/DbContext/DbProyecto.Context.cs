@@ -233,5 +233,18 @@ namespace Proyecto.DbContext
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SPUsuarioAgregar", usuarioParameter, contrasenniaParameter);
         }
+    
+        public virtual ObjectResult<Nullable<int>> SPUsuarioValidar(string usuario, string contrasennia)
+        {
+            var usuarioParameter = usuario != null ?
+                new ObjectParameter("usuario", usuario) :
+                new ObjectParameter("usuario", typeof(string));
+    
+            var contrasenniaParameter = contrasennia != null ?
+                new ObjectParameter("contrasennia", contrasennia) :
+                new ObjectParameter("contrasennia", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("SPUsuarioValidar", usuarioParameter, contrasenniaParameter);
+        }
     }
 }

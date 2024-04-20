@@ -24,6 +24,15 @@ namespace Proyecto.Pages
         protected global::System.Web.UI.WebControls.TextBox TxtNombre;
 
         /// <summary>
+        /// rfvNombre control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNombre;
+
+        /// <summary>
         /// TxtApellido control.
         /// </summary>
         /// <remarks>
@@ -31,6 +40,15 @@ namespace Proyecto.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TxtApellido;
+
+        /// <summary>
+        /// rfvApellido control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvApellido;
 
         /// <summary>
         /// TxtCedula control.
@@ -42,6 +60,15 @@ namespace Proyecto.Pages
         protected global::System.Web.UI.WebControls.TextBox TxtCedula;
 
         /// <summary>
+        /// rfvCedula control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCedula;
+
+        /// <summary>
         /// TxtTelefono control.
         /// </summary>
         /// <remarks>
@@ -51,6 +78,15 @@ namespace Proyecto.Pages
         protected global::System.Web.UI.WebControls.TextBox TxtTelefono;
 
         /// <summary>
+        /// rfvTelfono control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvTelfono;
+
+        /// <summary>
         /// TxtCorreo control.
         /// </summary>
         /// <remarks>
@@ -58,6 +94,15 @@ namespace Proyecto.Pages
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TxtCorreo;
+
+        /// <summary>
+        /// rfvCorreo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCorreo;
 
         /// <summary>
         /// DdlDepartamento control.

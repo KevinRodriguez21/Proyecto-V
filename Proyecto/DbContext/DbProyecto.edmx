@@ -58,7 +58,7 @@
           <Parameter Name="jerarquiaid" Type="int" Mode="In" />
         </Function>
         <Function Name="SPEmpleadosListar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <Function Name="SPUsuarioAgregar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+        <Function Name="SPUsuarioValidar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="usuario" Type="varchar" Mode="In" />
           <Parameter Name="contrasennia" Type="varchar" Mode="In" />
         </Function>
@@ -122,6 +122,10 @@
             <Parameter Name="jerarquiaid" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="SPUsuarioAgregar">
+            <Parameter Name="usuario" Mode="In" Type="String" />
+            <Parameter Name="contrasennia" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SPUsuarioValidar" ReturnType="Collection(Int32)">
             <Parameter Name="usuario" Mode="In" Type="String" />
             <Parameter Name="contrasennia" Mode="In" Type="String" />
           </FunctionImport>
@@ -271,7 +275,7 @@
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="SPEmpleadoModificar" FunctionName="ProyectoModel.Store.SPEmpleadoModificar" />
-          <FunctionImportMapping FunctionImportName="SPUsuarioAgregar" FunctionName="ProyectoModel.Store.SPUsuarioAgregar" />
+          <FunctionImportMapping FunctionImportName="SPUsuarioValidar" FunctionName="ProyectoModel.Store.SPUsuarioValidar" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

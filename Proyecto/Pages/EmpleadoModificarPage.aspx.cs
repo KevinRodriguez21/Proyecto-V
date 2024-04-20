@@ -12,14 +12,18 @@ namespace Proyecto.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            LlenarListaDepartamento();
+            if (IsPostBack == false)
+            {
+                LlenarListaDepartamento();
 
-            LlenarListaJerarquia();
+                LlenarListaJerarquia();
 
-            CargarInformacionDeCliente();
+                CargarInformacionDeEmpleado();
+
+            }
         }
 
-        private void CargarInformacionDeCliente()
+        private void CargarInformacionDeEmpleado()
         {
             int idempleado = Convert.ToInt32(Request.QueryString["id"]);
             TxtEmpleadoID.Text = idempleado.ToString();
@@ -149,35 +153,7 @@ namespace Proyecto.Pages
             }
         }
 
-        protected void BtnModificar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                int idempleado = Convert.ToInt32(TxtEmpleadoID.Text.Trim());
-                string nombre = TxtNombre.Text.Trim();
-                string apellido = TxtApellido.Text.Trim();
-                string cedula = TxtCedula.Text.Trim();
-                string telefono = TxtTelefono.Text.Trim();
-                string correo = TxtCorreo.Text.Trim();
-
-                int iddepartamento = Convert.ToInt32(DdlDepartamento.SelectedItem.Value);
-                int idjerarquia = Convert.ToInt32(DdlJerarquia.SelectedItem.Value);
-
-                //llamamos al sp de modificacion de usuario
-                using (ProyectoEntities db = new ProyectoEntities())
-                {
-                    db.SPEmpleadoModificar(idempleado, nombre, apellido, cedula, telefono, correo, iddepartamento, idjerarquia);
-                }
-
-            }
-            catch (Exception)
-            {
-
-                Response.Redirect("~/Pages/Error.aspx");
-            }
-
-            Response.Redirect("ExitoModificarEmpleado.aspx");
-        }
+        
 
         protected void BtnEliminar_Click(object sender, EventArgs e)
         {
@@ -196,6 +172,34 @@ namespace Proyecto.Pages
                 Response.Redirect("Error.aspx");
             }
             Response.Redirect("ExitoEliminarEmpleado.aspx");
+        }
+
+        protected void BtnModificar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int empleadoid = Convert.ToInt32(TxtEmpleadoID.Text.Trim());
+                string nombre = TxtNombre.Text.Trim();
+                string apellido = TxtApellido.Text.Trim();
+                string cedula = TxtCedula.Text.Trim();
+                string telefono = TxtTelefono.Text.Trim();
+                string correo = TxtCorreo.Text.Trim();
+
+                int Departamentoid = Convert.ToInt32(DdlDepartamento.SelectedItem.Value);
+                int Jerarquiaid = Convert.ToInt32(DdlJerarquia.SelectedItem.Value);
+
+                using (ProyectoEntities db = new ProyectoEntities())
+                {
+                    db.SPEmpleadoModificar(empleadoid, nombre, apellido, cedula, telefono, correo, Departamentoid, Jerarquiaid);
+                }
+
+            }
+            catch (Exception)
+            {
+                Response.Redirect("~/Pages/Error.aspx");
+            }
+
+            Response.Redirect("ExitoModificarEmpleado.aspx");
         }
     }
 }

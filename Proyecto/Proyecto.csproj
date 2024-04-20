@@ -142,9 +142,9 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Imagen\Login.png" />
     <Content Include="Pages\ClienteAgregarPage.aspx" />
     <Content Include="Pages\ClienteModificarPage.aspx" />
-    <Content Include="Pages\DetalleSesion.aspx" />
     <Content Include="Pages\EmpleadoAgregarPage.aspx" />
     <Content Include="Pages\EmpleadoModificarPage.aspx" />
     <Content Include="Pages\Error.aspx" />
@@ -156,8 +156,8 @@
     <Content Include="Pages\ExitoModificarEmpleado.aspx" />
     <Content Include="Pages\ListarClientePage.aspx" />
     <Content Include="Pages\ListarEmpleadoPage.aspx" />
+    <Content Include="Pages\Opciones.aspx" />
     <Content Include="Pages\Sesion.aspx" />
-    <Content Include="Pages\UsuarioAgregarPage.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -307,13 +307,6 @@
     <Compile Include="Pages\ClienteModificarPage.aspx.designer.cs">
       <DependentUpon>ClienteModificarPage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\DetalleSesion.aspx.cs">
-      <DependentUpon>DetalleSesion.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\DetalleSesion.aspx.designer.cs">
-      <DependentUpon>DetalleSesion.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Pages\EmpleadoAgregarPage.aspx.cs">
       <DependentUpon>EmpleadoAgregarPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -391,19 +384,19 @@
     <Compile Include="Pages\ListarEmpleadoPage.aspx.designer.cs">
       <DependentUpon>ListarEmpleadoPage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Opciones.aspx.cs">
+      <DependentUpon>Opciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Opciones.aspx.designer.cs">
+      <DependentUpon>Opciones.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Sesion.aspx.cs">
       <DependentUpon>Sesion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\Sesion.aspx.designer.cs">
       <DependentUpon>Sesion.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\UsuarioAgregarPage.aspx.cs">
-      <DependentUpon>UsuarioAgregarPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\UsuarioAgregarPage.aspx.designer.cs">
-      <DependentUpon>UsuarioAgregarPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">

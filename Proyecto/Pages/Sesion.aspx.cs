@@ -2,6 +2,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -13,42 +15,37 @@ namespace Proyecto.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Response.Redirect("~/Pages/DetalleSesion.aspx");
+            
         }
 
         protected void btnIngresar_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    string usuario = txtUsuario.Text;
-            //    string contrasena = txtContrasennia.Text;
+            string usuario = txtUsuario.Text;
+            string contrasennia = txtContrasennia.Text;
 
-            //    Llama al procedimiento almacenado para verificar las credenciales
-            //    using (ProyectoEntities db = new ProyectoEntities())
-            //    {
-            //        Verifica si las credenciales son válidas
-            //        var Lista = db.SpUsuariosListar().ToList();
-            //        var resultado = db.SpUsuariosListar().FirstOrDefault(u => u.Usuario == usuario && u.Contrasennia == contrasena);
-            //        GvListaUsuarios.DataSource = Lista;
-            //        GvListaUsuarios.DataBind();
+            // Conexión a la base de datos y llamada al procedimiento almacenado
+            using (ProyectoEntities db = new ProyectoEntities())
+            {
+                try
+                {
+                    int resultado = db.SPUsuarioValidar(usuario, contrasennia).FirstOrDefault() ?? 0;
 
-            //        if (resultado != null)
-            //        {
-            //            // Credenciales válidas, iniciar sesión
-            //            Session["objeto"] = resultado;
-            //            Response.Redirect("~/Pages/DetalleSesion.aspx");
-            //        }
-            //        else
-            //        {
-            //            // Credenciales inválidas, muestra un mensaje de error
-            //            //lblMensaje.Text = "Usuario o contraseña incorrectos.";
-            //        }
-            //    }
-            //}
-            //catch (Exception)
-            //{
-            //    lblMensaje.Text = ex.Message;
-            //}
+                    if (resultado == 1)
+                    {
+                        // Iniciar sesión
+                        Session["Usuario"] = usuario;
+                        Response.Redirect("~/Pages/Opciones.aspx"); // Página de bienvenida
+                    }
+                    else
+                    {
+                        lblMensaje.Text = "Usuario o contraseña incorrectos.";
+                    }
+                }
+                catch (Exception ex)
+                {
+                    lblMensaje.Text = "Error al intentar iniciar sesión: " + ex.Message;
+                }
+            }
         }
 
     }
